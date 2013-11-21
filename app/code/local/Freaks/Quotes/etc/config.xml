@@ -67,4 +67,24 @@
             </updates>
         </layout>
     </frontend>
+    <adminhtml>    
+        <layout>
+            <updates>
+                <freaks_quotes>
+                    <file>freaks/quotes.xml</file>
+                </freaks_quotes>
+            </updates>
+        </layout>
+    </adminhtml>
+   <admin>
+        <routers>
+             <adminhtml>
+                 <args>
+                     <modules>
+                         <freaks_quotes before="Mage_Adminhtml">Freaks_Quotes_Adminhtml</freaks_quotes>
+                     </modules>
+                 </args>
+             </adminhtml>
+        </routers>
+    </admin>
 </config>
