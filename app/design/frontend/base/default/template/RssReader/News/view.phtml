@@ -1,0 +1,7 @@
+<h1>TEST</h1>
+<?php foreach ($this->getCollection() as $quote): ?>
+<div class="quote-item">
+    <h4><?php echo $quote->getTitle() ?></h4>
+    <p><?php echo $quote->getId() ?></p>
+</div>
+<?php endforeach ?>

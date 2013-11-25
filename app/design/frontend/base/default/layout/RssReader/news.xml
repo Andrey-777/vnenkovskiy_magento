@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <RssReader_News_index_index>
+        <reference name="content">
+            <block type="RssReader_News/content" name="News.all" />
+        </reference>
+    </RssReader_News_index_index>
+</layout>
