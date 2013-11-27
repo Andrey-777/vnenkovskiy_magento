@@ -2,7 +2,7 @@
 <config>
     <modules>
         <RssReader_News>
-            <version>0.2.0</version>
+            <version>0.1.0</version>
         </RssReader_News>
     </modules>
     <global>
@@ -10,46 +10,7 @@
             <RssReader_News>
                 <class>RssReader_News_Block</class>
             </RssReader_News>
-        </blocks>
-        <helpers>
-            <RssReader_News>
-                <class>RssReader_News_Helper</class>
-            </RssReader_News>
-        </helpers>
-        <models>
-            <RssReader_News>
-                <class>RssReader_News_Model</class>
-                <resourceModel>news_resource</resourceModel>
-                <news_resource>
-                    <class>RssReader_News_Model_Resource</class>
-                    <entities>
-                        <news>
-                            <table>rss.news</table>
-                        </news>
-                    </entities>
-                </news_resource>
-            </RssReader_News>
-        </models>
-        <resources>
-            <RssReader_News_setup>
-                <setup>
-                    <module>RssReader_News</module>
-                </setup>
-                <connection>
-                    <use>core_setup</use>
-                </connection>
-            </RssReader_News_setup>
-            <RssReader_News_write>
-                <connection>
-                    <use>core_write</use>
-                </connection>
-            </RssReader_News_write>
-            <RssReader_News_read>
-                <connection>
-                    <use>core_read</use>
-                </connection>
-            </RssReader_News_read>
-        </resources>
+        </blocks>        
     </global>
     <frontend>
         <routers>
