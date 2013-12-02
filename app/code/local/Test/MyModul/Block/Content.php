@@ -2,12 +2,13 @@
 class Test_MyModul_Block_Content extends Mage_Core_Block_Template
 {   
     protected $_numberPage = 0;    
-    
+    protected $_pages      = array();
     const COUNT_NEWS_ON_PAGE = 15;        
     
     protected function _construct()
     {
-        $this->_numberPage = (int)$this->getRequest()->getParam('numberPage') ? : 1;        
+        $this->_numberPage = (int)$this->getRequest()->getParam('numberPage') ? : 1;  
+        $this->_pages      = Mage::helper('test_paginator')->paginator($this->_numberPage, $this->getCountNews(), 15);
         $this->setTemplate('test/mymodul/view.phtml');                
     }        
     
