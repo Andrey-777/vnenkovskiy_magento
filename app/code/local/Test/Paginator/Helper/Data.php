@@ -5,11 +5,18 @@
         {                 
             $countPages = (int)ceil($totalElements / $countElementsOnPage);
             
-            $pages = array('startFor'  => 1, 
-                           'endFor'    => 6, 
-                           'firstPage' => 1, 
-                           'lastPage'  => $countPages);
-
+            $pages = array('startFor'     => 1, 
+                           'endFor'       => 6, 
+                           'firstPage'    => 1,
+                           'nextPage'     => $numberPage + 1,
+                           'previousPage' => $numberPage - 1,
+                           'lastPage'     => $countPages);
+            
+            $pages['isNextPage']     = $numberPage != $countPages ? true : false;                
+            $pages['isPreviousPage'] = $numberPage > 1 ? true : false;            
+            $pages['isFirstpPage']   = $numberPage > 6 ? true : false;
+            $pages['isLastPage']     = $numberPage < ($countPages - 5) ? true : false;            
+            
             if ($numberPage == $countPages) {                           
                 $pages['startFor'] = $numberPage - 5;
                 $pages['endFor']   = $numberPage;
@@ -20,7 +27,7 @@
                         ? $countPages 
                         : $numberPage + 5;
             }              
-
+                        
             return $pages;
         }        
     }
