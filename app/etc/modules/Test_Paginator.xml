@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Test_Paginator>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Test_Paginator>
+    </modules>
+</config>

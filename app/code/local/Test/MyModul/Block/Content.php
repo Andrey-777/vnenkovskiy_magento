@@ -1,33 +1,40 @@
 <?php
 class Test_MyModul_Block_Content extends Mage_Core_Block_Template
-{
+{   
+    protected $_numberPage = 0;    
+    
+    const COUNT_NEWS_ON_PAGE = 15;        
+    
     protected function _construct()
     {
-        $this->setTemplate('test/mymodul/view.phtml');
-    }    
-    /*
-    protected function _getNews() 
-    {
-        $conf = array(
-                        'host'     => 'localhost',
-                        'username' => 'root',
-                        'password' => '',
-                        'dbname'   => 'rss'
-                     );
-        $_resource = Mage::getSingleton('core/resource');
-        $_conn = $_resource->createConnection('customConnection', 'pdo_mysql', $conf);
-        return $_conn->query('SELECT * FROM news N ORDER BY N.pubDate DESC')->fetchAll();
-    }
-     * 
-     */
+        $this->_numberPage = (int)$this->getRequest()->getParam('numberPage') ? : 1;        
+        $this->setTemplate('test/mymodul/view.phtml');                
+    }        
     
     public function getRowUrl($id) 
     {
         return $this->getUrl('*/*/view', array('id' => $id));
     }
     
-    public function getCollection()
-    {
-        return Mage::getModel('test_mymodul/mymodul')->getCollection()->setOrder('pubDate', 'DESC');;
+    public function getRowUrlPage($nambPage)
+    {                
+        return $this->getUrl('*/*/index', array('numberPage' => $nambPage));
     }
+    
+    public function getCollection()
+    {     
+        return Mage::getModel('test_mymodul/mymodul')->getCollection()
+                                                     ->setOrder('pubDate', 'DESC')
+                                                     ->setPageSize(self::COUNT_NEWS_ON_PAGE)
+                                                     ->setCurPage($this->_numberPage);
+    }   
+    
+    public function getCountNews() {
+        return (int)Mage::getModel('test_mymodul/mymodul')->getCollection()->count();
+    }
+    
+    public function getQuantityPage()
+    {
+        return (int)ceil($this->getCountNews() / self::COUNT_NEWS_ON_PAGE); 
+    }  
 }
