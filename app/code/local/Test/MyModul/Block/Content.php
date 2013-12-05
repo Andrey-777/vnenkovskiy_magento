@@ -1,25 +1,27 @@
 <?php
 class Test_MyModul_Block_Content extends Mage_Core_Block_Template
-{   
-    protected $_numberPage = 0;    
-    protected $_pages      = array();
-    const COUNT_NEWS_ON_PAGE = 15;        
+{      
+    protected $_rowUrl     = ''; 
     
+    const COUNT_NEWS_ON_PAGE = 15;        
+  
     protected function _construct()
     {
-        $this->_numberPage = (int)$this->getRequest()->getParam('numberPage') ? : 1;  
-        $this->_pages      = Mage::helper('test_paginator')->paginator($this->_numberPage, $this->getCountNews(), 15);
-        $this->setTemplate('test/mymodul/view.phtml');                
-    }        
+        $this->_rowUrl     = $this->getRowUrlPage();
+        
+        Mage::register('countOnPage', self::COUNT_NEWS_ON_PAGE);
+        Mage::register('countElements', $this->getCountNews());
+        Mage::register('rowUrl', $this->_rowUrl);
+    }                       
     
     public function getRowUrl($id) 
     {
         return $this->getUrl('*/*/view', array('id' => $id));
     }
     
-    public function getRowUrlPage($nambPage)
-    {                
-        return $this->getUrl('*/*/index', array('numberPage' => $nambPage));
+    public function getRowUrlPage($numberPage = '')
+    {
+        return $this->getUrl('*/*/index', array('numberPage' => $numberPage));
     }
     
     public function getCollection()
@@ -27,7 +29,7 @@ class Test_MyModul_Block_Content extends Mage_Core_Block_Template
         return Mage::getModel('test_mymodul/mymodul')->getCollection()
                                                      ->setOrder('pubDate', 'DESC')
                                                      ->setPageSize(self::COUNT_NEWS_ON_PAGE)
-                                                     ->setCurPage($this->_numberPage);
+                                                     ->setCurPage($this->getRequest()->getParam('numberPage') ? : 1);
     }   
     
     public function getCountNews() {
