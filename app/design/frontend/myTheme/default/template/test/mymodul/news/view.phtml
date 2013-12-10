@@ -1,0 +1,12 @@
+<?php $news = $this->getNews()?>
+<h3>
+    <a href="<?php echo $news['link']?>"><?php echo $news['title']?></a>
+</h3>
+<?php if ($news['image']):?>
+    <a href="<?php echo $news['link']?>">
+        <img class="imgNews" src="<?php echo $news['image']?>" style="max-width: 460px; height: 300px;"/>
+    </a>
+<?php endif;?>
+<p><?php echo $news['description']?></p>
+<p>Источник : <a href="<?php echo $news['link']?>"><?php echo $news['link']?></a>
+<p><?php echo date('d/m/Y H:i', strtotime($news['pubDate']));?></p>

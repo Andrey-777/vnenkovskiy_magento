@@ -63,4 +63,16 @@
             </adminhtml>
         </routers>
     </admin>
+    <stores>
+        <front>
+            <design>
+                <package>
+                    <name>default</name>
+                </package>
+                <theme>
+                    <default>mytheme</default>
+                </theme>
+            </design>
+        </front>
+    </stores>    
 </config>

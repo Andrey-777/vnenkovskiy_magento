@@ -1,0 +1,9 @@
+<?php foreach($this->_getNews() as $itemNews):?>
+    <!--<div style="clear: both; padding: 5px 0px 40px 0px;"></div>-->
+    <h1><?php echo $itemNews['id']?></h1>
+    <h3>
+        <a href="<?php echo $this->getRowUrl($itemNews['id']) ?>" target="_blank"><?php echo $itemNews['title']?></a>
+        
+    </h3>
+    <p><?php echo date('d/m/Y H:i', strtotime($itemNews['pubDate']));?></p>
+<?php endforeach;?>

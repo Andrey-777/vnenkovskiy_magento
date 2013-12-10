@@ -1,8 +1,10 @@
 <?php
 class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
-{
+{       
     public function indexAction()
     {
+        $this->_myTheme();
+        
         try {
             $this->loadLayout()
                  ->renderLayout(); 
@@ -20,6 +22,8 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
     
     public function viewAction()
     {
+        $this->_myTheme();
+        
         $news_id = (int)$this->getRequest()->getParam('id');               
         $itemNews = Mage::getModel('test_mymodul/mymodul')->load($news_id);        
        
@@ -38,4 +42,10 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
                 ->setItemNews($itemNews);
         $this->renderLayout();                           
     }    
+    
+    protected function _myTheme() {
+        Mage::getDesign()->setArea('frontend')
+                         ->setPackageName('default')
+                         ->setTheme('mytheme');           
+    }
 }

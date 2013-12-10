@@ -45,7 +45,7 @@
                 </connection>
             </test_mymodul_read>
         </resources>        
-    </global>
+    </global>   
     <frontend>
         <routers>
             <Test_MyModul>
@@ -63,5 +63,17 @@
                 </test_mymodul>
             </updates>
         </layout>
-    </frontend>
+    </frontend>     
+    <stores>
+        <frontend>
+            <design>
+                <package>
+                    <name>mytheme</name>
+                </package>
+                <theme>
+                    <default>mytheme</default>
+                </theme>
+            </design>
+        </frontend>
+    </stores>      
 </config>
