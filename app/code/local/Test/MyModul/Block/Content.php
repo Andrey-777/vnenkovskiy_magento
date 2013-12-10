@@ -1,16 +1,13 @@
 <?php
 class Test_MyModul_Block_Content extends Mage_Core_Block_Template
 {      
-    protected $_rowUrl     = ''; 
+    protected $_rowUrl = ''; 
     
     const COUNT_NEWS_ON_PAGE = 15;        
   
     protected function _construct()
     {
-        $this->_rowUrl     = $this->getRowUrlPage();
-echo "<pre>";
-echo var_dump($this->getLayout());
-echo "</pre>";        
+        $this->_rowUrl = $this->getRowUrlPage();     
         Mage::register('countOnPage', self::COUNT_NEWS_ON_PAGE);
         Mage::register('countElements', $this->getCountNews());
         Mage::register('rowUrl', $this->_rowUrl);

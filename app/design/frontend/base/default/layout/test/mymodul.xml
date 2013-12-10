@@ -2,8 +2,10 @@
 <layout version="0.1.0">
     <test_mymodul_index_index>  
         <reference name="content">
+            <block type="test_mymodul/header" name="header.item" template="test/mymodul/header.phtml"/>
             <block type="test_mymodul/content" name="mymodul.item" template="test/mymodul/view.phtml"/>
             <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator.phtml"/>
+            <block type="test_mymodul/footer" name="footer.item" template="test/mymodul/footer.phtml"/>
         </reference>           
     </test_mymodul_index_index>
     <test_mymodul_index_view>  

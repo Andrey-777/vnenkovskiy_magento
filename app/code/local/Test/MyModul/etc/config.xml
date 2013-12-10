@@ -63,17 +63,5 @@
                 </test_mymodul>
             </updates>
         </layout>
-    </frontend>     
-    <stores>
-        <frontend>
-            <design>
-                <package>
-                    <name>mytheme</name>
-                </package>
-                <theme>
-                    <default>mytheme</default>
-                </theme>
-            </design>
-        </frontend>
-    </stores>      
+    </frontend>         
 </config>
