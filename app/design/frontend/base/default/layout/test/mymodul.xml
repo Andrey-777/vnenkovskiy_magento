@@ -7,19 +7,16 @@
     </test_mymodul_index_index>  
     <test_mymodul_index_sourcenews>
         <reference name="content">
-            <block type="test_mymodul/sourcenews_content" name="sourcenews.page" template="test/mymodul/sourceNews/view.phtml"/>
-        </reference>
-    </test_mymodul_index_sourcenews> 
-    <!--
-    <test_mymodul_index_index>  
-        <reference name="content">
-            <block type="test_mymodul/header" name="header.item" template="test/mymodul/header.phtml"/>
-            <block type="test_mymodul/content" name="mymodul.item" template="test/mymodul/view.phtml"/>
+            <block type="test_mymodul/sourcenews_content" name="sourcenews.page" template="test/mymodul/sourceNews/view.phtml"/>            
             <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator.phtml"/>
-            <block type="test_mymodul/footer" name="footer.item" template="test/mymodul/footer.phtml"/>
-        </reference>           
-    </test_mymodul_index_index>
-    -->
+        </reference>
+    </test_mymodul_index_sourcenews>
+    <test_mymodul_index_all>
+        <reference name="content">
+            <block type="test_mymodul/content" name="all.page" template="test/mymodul/view.phtml"/>
+            <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator.phtml"/>
+        </reference>
+    </test_mymodul_index_all>_ 
     <test_mymodul_index_view>  
         <reference name="content">
             <block type="test_mymodul/news_content" name="news.item" template="test/mymodul/news/view.phtml"/>

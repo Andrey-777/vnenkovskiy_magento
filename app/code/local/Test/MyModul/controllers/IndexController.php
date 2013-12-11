@@ -13,12 +13,12 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
     {
         $this->_myTheme();
         $sourceId = (int)$this->getRequest()->getParam('id');          
-      
+        Mage::register('sourceId', $sourceId);
+        
         $this->loadLayout();
         $this
             ->getLayout()
-                ->getBlock('sourcenews.page')
-                ->setSourceId($sourceId);
+                ->getBlock('sourcenews.page');
         $this->renderLayout();
     }    
 //    public function sourceNewsAction()
@@ -34,9 +34,8 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
 //                ->setSourceNews($collection->getData());
 //        $this->renderLayout();
 //    }
-    
-    /*
-    public function indexAction()
+        
+    public function allAction()
     {
         $this->_myTheme();
         
@@ -53,8 +52,6 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
         }
         return false;
     }
-     * 
-     */
     
     public function viewAction()
     {

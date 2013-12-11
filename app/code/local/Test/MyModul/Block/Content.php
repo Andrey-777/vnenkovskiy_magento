@@ -6,7 +6,7 @@ class Test_MyModul_Block_Content extends Mage_Core_Block_Template
     const COUNT_NEWS_ON_PAGE = 15;        
   
     protected function _construct()
-    {
+    {         
         $this->_rowUrl = $this->getRowUrlPage();     
         Mage::register('countOnPage', self::COUNT_NEWS_ON_PAGE);
         Mage::register('countElements', $this->getCountNews());
@@ -20,7 +20,7 @@ class Test_MyModul_Block_Content extends Mage_Core_Block_Template
     
     public function getRowUrlPage($numberPage = '')
     {
-        return $this->getUrl('*/*/index', array('numberPage' => $numberPage));
+        return $this->getUrl('*/*/all', array('numberPage' => $numberPage));
     }
     
     public function getCollection()
@@ -36,7 +36,7 @@ class Test_MyModul_Block_Content extends Mage_Core_Block_Template
     }
     
     public function getQuantityPage()
-    {
+    {      
         return (int)ceil($this->getCountNews() / self::COUNT_NEWS_ON_PAGE); 
     }  
 }
