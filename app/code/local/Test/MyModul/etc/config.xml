@@ -22,6 +22,9 @@
                     <mymodul>
                         <table>rss.news</table>
                     </mymodul>
+                    <chanel>
+                        <table>rss.chanel</table>
+                    </chanel>
                 </entities>
             </mymodul_resource>
         </models>        

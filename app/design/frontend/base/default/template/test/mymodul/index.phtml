@@ -1,0 +1,8 @@
+<?php foreach($this->getCollection() as $item):?>    
+    <div>
+        <h4>                  
+            <a href="<?php echo $this->getRowUrl($item['chanel_Id'])?>" target="_blank"><?php echo $item['name']?></a>
+        </h4>
+        <p><?php echo $item['count_news'];?></p>
+    </div>
+<?php endforeach;?>

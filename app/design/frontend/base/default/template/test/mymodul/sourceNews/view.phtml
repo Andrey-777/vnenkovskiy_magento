@@ -1,0 +1,9 @@
+<?php foreach($this->getCollection() as $itemNews):?>    
+    <div>
+        <h3>        
+            <a href="<?php echo $this->getRowUrl($itemNews['id']) ?>" target="_blank"><?php echo $itemNews['title']?></a>
+        </h3>
+        <p>Источник : <a href="<?php echo $itemNews['link']?>"><?php echo $itemNews['link']?></a>
+        <p><?php echo date('d/m/Y H:i', strtotime($itemNews['pubDate']));?></p>        
+    </div>
+<?php endforeach;?>

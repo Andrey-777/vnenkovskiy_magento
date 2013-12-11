@@ -1,6 +1,41 @@
 <?php
 class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
-{       
+{   
+    public function indexAction()
+    {
+        $this->_myTheme();
+         
+        $this->loadLayout()
+             ->renderLayout();         
+    }
+
+    public function sourceNewsAction()
+    {
+        $this->_myTheme();
+        $sourceId = (int)$this->getRequest()->getParam('id');          
+      
+        $this->loadLayout();
+        $this
+            ->getLayout()
+                ->getBlock('sourcenews.page')
+                ->setSourceId($sourceId);
+        $this->renderLayout();
+    }    
+//    public function sourceNewsAction()
+//    {
+//        $this->_myTheme();
+//        $sourceId   = (int)$this->getRequest()->getParam('id');  
+//        $collection = Mage::getModel('test_mymodul/mymodul')->getCollection()->addFilter('chanel_Id', $sourceId);        
+//      
+//        $this->loadLayout();
+//        $this
+//            ->getLayout()
+//                ->getBlock('sourcenews.page')
+//                ->setSourceNews($collection->getData());
+//        $this->renderLayout();
+//    }
+    
+    /*
     public function indexAction()
     {
         $this->_myTheme();
@@ -11,14 +46,15 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
         } catch(Exception $e) {           
             if(Mage::getIsDeveloperMode())
             {
-                echo $e->getMessage();
-                // Or even throw $e would work for me
+                echo $e->getMessage();            
             }
             Mage::logException($e);
             
         }
         return false;
     }
+     * 
+     */
     
     public function viewAction()
     {
