@@ -1,0 +1,38 @@
+<style>
+    .menu_item 
+    {
+        display: inline-block;
+        width: 200px;
+        padding: 10px;
+        background: #ccc;
+        text-align: center;
+    }
+    
+    .menu_item:hover
+    {
+        background: #aaa;        
+    }
+    
+    .menu_item a
+    {
+        text-decoration: none;
+        color: #000;
+    }
+</style>
+<div class="menu">
+    <ul>
+        <li class="menu_item">
+            Главная
+        </li>
+        <li class="menu_item">
+            <a href="<?php echo $this->getRowUrl('all')?>">Все новости</a>
+        </li>
+        <li class="menu_item">
+            <a href="<?php echo $this->getRowUrl('index')?>">Источники</a>
+        </li>        
+    </ul>
+</div>
+<!--
+    <a href="<?php echo $this->getRowUrl('all')?>">Все новости</a>
+    <a href="<?php echo $this->getRowUrl('index')?>">На главную</a>
+-->
