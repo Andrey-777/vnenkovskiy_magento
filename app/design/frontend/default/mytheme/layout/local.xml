@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout>
-    <default> 
-        <remove name="head" />
-        <remove name="header" />
-        <remove name="footer" />
+    <default>   
+        <!--<remove name="head" />-->
+        
+        <!--<remove name="header" />-->
+        <!--<remove name="footer" />-->
         <remove name="right"/>
         <remove name="left"/>
         <remove name="cart_sidebar" />
@@ -11,13 +12,38 @@
         <remove name="right.poll"/>
         <remove name="right.permanent.callout"/>
         <remove name="left.permanent.callout"/>
-        <remove name="paypal.partner.right.logo"/>
- 
-        <!-- add the local stylesheet -->
-        <!--
-        <reference name="content">
-            <action method="addCss"><stylesheet>css/local.css</stylesheet></action>
-        </reference>
-        -->
+        <remove name="paypal.partner.right.logo"/>                 
     </default>
+    
+    <test_mymodul_index_index>        
+        <reference name="content">            
+            <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
+        </reference>
+    </test_mymodul_index_index>  
+    <test_mymodul_index_source>
+        <reference name="content">
+            <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
+            <block type="test_mymodul/index_content" name="index.page" template="test/mymodul/index.phtml"/>            
+        </reference>
+    </test_mymodul_index_source>
+    <test_mymodul_index_sourcenews>
+        <reference name="content">
+            <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
+            <block type="test_mymodul/sourcenews_content" name="sourcenews.page" template="test/mymodul/sourceNews/view.phtml"/>            
+            <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator.phtml"/>
+        </reference>
+    </test_mymodul_index_sourcenews>
+    <test_mymodul_index_all>
+        <reference name="content">
+            <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
+            <block type="test_mymodul/content" name="all.page" template="test/mymodul/view.phtml"/>
+            <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator.phtml"/>
+        </reference>
+    </test_mymodul_index_all>_ 
+    <test_mymodul_index_view>  
+        <reference name="content">
+            <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
+            <block type="test_mymodul/news_content" name="news.item" template="test/mymodul/news/view.phtml"/>
+        </reference>
+    </test_mymodul_index_view>      
 </layout>

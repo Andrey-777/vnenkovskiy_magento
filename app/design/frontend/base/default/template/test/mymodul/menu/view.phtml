@@ -1,5 +1,5 @@
 <style>
-    .menu_item 
+/*    .menu_item 
     {
         display: inline-block;
         width: 200px;
@@ -17,18 +17,18 @@
     {
         text-decoration: none;
         color: #000;
-    }
+    }*/
 </style>
 <div class="menu">
     <ul>
         <li class="menu_item">
-            Главная
+            <a href="<?php echo $this->getRowUrl('index')?>">Главная</a>
         </li>
         <li class="menu_item">
             <a href="<?php echo $this->getRowUrl('all')?>">Все новости</a>
         </li>
         <li class="menu_item">
-            <a href="<?php echo $this->getRowUrl('index')?>">Источники</a>
+            <a href="<?php echo $this->getRowUrl('source')?>">Источники</a>
         </li>        
     </ul>
 </div>

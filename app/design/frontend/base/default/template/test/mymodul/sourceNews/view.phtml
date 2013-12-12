@@ -1,7 +1,7 @@
 <?php foreach($this->getCollection() as $itemNews):?>    
-    <div>
+    <div class="itemNews">
         <h3>        
-            <a href="<?php echo $this->getRowUrl($itemNews['id']) ?>" target="_blank"><?php echo $itemNews['title']?></a>
+            <a href="<?php echo $this->getRowUrl($itemNews['id']) ?>"><?php echo $itemNews['title']?></a>
         </h3>
         <p><?php echo date('d/m/Y H:i', strtotime($itemNews['pubDate']));?></p>        
     </div>
