@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout>
     <default>   
-        <!--<remove name="head" />-->
-        
-        <!--<remove name="header" />-->
-        <!--<remove name="footer" />-->
         <remove name="right"/>
         <remove name="left"/>
         <remove name="cart_sidebar" />
@@ -16,14 +12,15 @@
     </default>
     
     <test_mymodul_index_index>        
-        <reference name="content">            
+        <reference name="content">
+            <block type="test_mymodul/" name="" template=""/>            
             <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
         </reference>
     </test_mymodul_index_index>  
     <test_mymodul_index_source>
         <reference name="content">
             <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
-            <block type="test_mymodul/index_content" name="index.page" template="test/mymodul/index.phtml"/>            
+            <block type="test_mymodul/source_content" name="source.page" template="test/mymodul/source.phtml"/>            
         </reference>
     </test_mymodul_index_source>
     <test_mymodul_index_sourcenews>
@@ -36,7 +33,7 @@
     <test_mymodul_index_all>
         <reference name="content">
             <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
-            <block type="test_mymodul/content" name="all.page" template="test/mymodul/view.phtml"/>
+            <block type="test_mymodul/all_content" name="all.page" template="test/mymodul/view.phtml"/>
             <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator.phtml"/>
         </reference>
     </test_mymodul_index_all>_ 

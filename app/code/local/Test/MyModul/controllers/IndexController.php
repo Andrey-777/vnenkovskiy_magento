@@ -1,24 +1,27 @@
 <?php
 class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
-{   
+{       
     public function indexAction()
     {         
         $this->_myTheme();
+        
         $this->loadLayout()
              ->renderLayout();         
     }
     
     public function sourceAction()
     {
-        $this->_myTheme();
+        $this->_myTheme();              
+        
         $this->loadLayout()
              ->renderLayout();          
     }
 
     public function sourceNewsAction()
-    {
+    {      
         $this->_myTheme();
-        $sourceId = (int)$this->getRequest()->getParam('id');          
+       
+        $sourceId = (int)$this->getRequest()->getParam('id');  
         Mage::register('sourceId', $sourceId);
         
         $this->loadLayout();
@@ -29,9 +32,9 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
     }    
         
     public function allAction()
-    {
-        $this->_myTheme();
-        
+    {        
+        $this->_myTheme();     
+
         $this->loadLayout()
              ->renderLayout(); 
         
@@ -39,9 +42,9 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
     
     public function viewAction()
     {
-        $this->_myTheme();
+        $this->_myTheme();            
         
-        $news_id = (int)$this->getRequest()->getParam('id');               
+        $news_id = (int)$this->getRequest()->getParam('id');          
         $itemNews = Mage::getModel('test_mymodul/mymodul')->load($news_id);        
        
         if (!$itemNews->getId()) {

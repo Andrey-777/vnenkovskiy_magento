@@ -47,7 +47,7 @@
                     <use>core_read</use>
                 </connection>
             </test_mymodul_read>
-        </resources>        
+        </resources>            
     </global>   
     <frontend>
         <routers>
