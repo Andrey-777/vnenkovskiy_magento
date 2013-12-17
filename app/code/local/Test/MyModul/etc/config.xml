@@ -4,7 +4,7 @@
         <Test_MyModul>
             <version>0.1.0</version>
         </Test_MyModul>
-    </modules>
+    </modules>                         
     <global>
         <blocks>
             <test_mymodul>
@@ -47,8 +47,8 @@
                     <use>core_read</use>
                 </connection>
             </test_mymodul_read>
-        </resources>            
-    </global>   
+        </resources>        
+    </global>      
     <frontend>
         <routers>
             <Test_MyModul>
