@@ -52,7 +52,7 @@
             <controller_front_init_routers>
                 <observers>
                     <mymodul_index>
-                        <class>Test_MyModul_Controllers_Router</class>
+                        <class>Test_MyModul_Controllers_Routers_Router</class>
                         <method>initControllerRouters</method>
                     </mymodul_index>
                 </observers>
@@ -77,11 +77,4 @@
             </updates>
         </layout>
     </frontend>
-<!--    <default>
-        <web>
-            <default>
-                <front>mymodul_index</front>
-            </default>
-        </web>             
-    <default>-->
 </config>

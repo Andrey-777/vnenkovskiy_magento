@@ -112,12 +112,15 @@ body
 a:link 
 {
     color: #5445DB;
+    text-decoration: none !important;
 }
 a:visited 
 {
     color: #5445DB;
+    text-decoration: none !important;
 }
 a:active 
 {
     color: #4D3FCA;
+    text-decoration: none !important;
 }

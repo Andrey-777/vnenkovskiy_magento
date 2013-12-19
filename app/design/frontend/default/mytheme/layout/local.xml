@@ -20,21 +20,21 @@
     <test_mymodul_index_source>
         <reference name="content">
             <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
-            <block type="test_mymodul/source_content" name="source.page" template="test/mymodul/source.phtml"/>            
+            <block type="test_mymodul/source_content" name="source.page" template="test/mymodul/source/source.phtml"/>            
         </reference>
     </test_mymodul_index_source>
     <test_mymodul_index_sourcenews>
         <reference name="content">
             <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
             <block type="test_mymodul/sourcenews_content" name="sourcenews.page" template="test/mymodul/sourceNews/view.phtml"/>            
-            <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator.phtml"/>
+            <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator/paginator.phtml"/>
         </reference>
     </test_mymodul_index_sourcenews>
     <test_mymodul_index_all>
         <reference name="content">
             <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
-            <block type="test_mymodul/all_content" name="all.page" template="test/mymodul/view.phtml"/>
-            <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator.phtml"/>
+            <block type="test_mymodul/all_content" name="all.page" template="test/mymodul/all/view.phtml"/>
+            <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator/paginator.phtml"/>
         </reference>
     </test_mymodul_index_all>_ 
     <test_mymodul_index_view>  
