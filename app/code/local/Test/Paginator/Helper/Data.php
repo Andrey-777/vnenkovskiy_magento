@@ -40,6 +40,7 @@ class Test_Paginator_Helper_Data extends Mage_Core_Helper_Abstract
     
     public function getRowUrl($action = '', array $param = null) 
     {
-        return $param ? str_replace('/index', '', Mage::getUrl("*/*/$action", $param)) : Mage::getUrl("*/$action");
+        return $param ? str_replace('/index', '', Mage::getUrl("*/*/$action", $param)) 
+                      : str_replace('/index', '', Mage::getUrl("*/$action"));
     }
 }

@@ -6,25 +6,12 @@ class Test_MyModul_Block_All_Content extends Mage_Core_Block_Template
     const COUNT_NEWS_ON_PAGE = 15;        
   
     protected function _construct()
-    {                 
-//        $this->_rowUrl = $this->getRowUrlPage();     
+    {                    
         $this->_rowUrl = Mage::helper('test_paginator')->getRowUrl('all');     
         Mage::register('countOnPage', self::COUNT_NEWS_ON_PAGE);
         Mage::register('countElements', $this->getCountNews());
         Mage::register('rowUrl', $this->_rowUrl);
     }                               
-    
-//    public function getRowUrl($action, array $param)
-//    {                                        
-//        return str_replace('/index', '', $this->getUrl("*/*/$action", $param));        
-//    }
-    
-    public function getRowUrlPage($numberPage = '')            
-    {
-       return $this->getUrl('*/*/all', array('numberPage' => $numberPage));
-        
-//        return $this->getUrl('*/*/all', array('numberPage' => $numberPage));
-    }        
     
     public function getCollection()
     {     

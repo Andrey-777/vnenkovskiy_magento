@@ -1,13 +1,5 @@
 <?php foreach($this->getCollection() as $itemNews):?>    
     <div class="itemNews"> 
-<?php
-echo "<pre>";
-echo var_dump(__CLASS__);
-echo "</pre>";
-?>                
-<!--        <h3>        
-            <a href="<?php echo $this->getRowUrl('view', array('id' => $itemNews['id'])) ?>"><?php echo $itemNews['title']?></a>
-        </h3>-->
         <h3>        
             <a href="<?php echo Mage::helper('test_paginator')->getRowUrl('view', array('id' => $itemNews['id'])) ?>"><?php echo $itemNews['title']?></a>
         </h3>

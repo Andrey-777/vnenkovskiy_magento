@@ -1,13 +1,13 @@
 <div class="menu">
     <ul>
         <li class="menu_item">
-            <a href="<?php echo $this->getRowUrl('index')?>">Главная</a>
+            <a href="<?php echo Mage::helper('test_paginator')->getRowUrl('index')?>">Главная</a>
         </li>
         <li class="menu_item">
-            <a href="<?php echo $this->getRowUrl('all')?>">Все новости</a>
+            <a href="<?php echo Mage::helper('test_paginator')->getRowUrl('all')?>">Все новости</a>
         </li>
         <li class="menu_item">
-            <a href="<?php echo $this->getRowUrl('source')?>">Источники</a>
+            <a href="<?php echo Mage::helper('test_paginator')->getRowUrl('source')?>">Источники</a>
         </li>        
     </ul>
 </div>

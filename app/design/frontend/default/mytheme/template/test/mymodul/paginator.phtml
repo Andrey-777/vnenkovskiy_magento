@@ -1,25 +1,3 @@
-<style>
-/*    .pagin {
-        padding: 0 5px;
-        font-weight: bold;
-        font-size: 16px;
-    }
-    
-    .selectPagin {
-        color: #F41713; 
-        padding: 0 5px;
-        font-weight: bold;
-        font-size: 17px;
-    }
-    
-    .divPagin {
-        text-align: center;
-        margin: 25px auto;
-        clear: both;
-    }        */
-</style> 
-
-
 <div class="divPagin">
     <?php if($this->_pages['hasPreviousPage']):?>
     <a href="<?php echo Mage::registry('rowUrl') . 'numberPage/' . $this->_pages['previousPage'] . '/' ?>" class="pagin">< Previous Page</a>

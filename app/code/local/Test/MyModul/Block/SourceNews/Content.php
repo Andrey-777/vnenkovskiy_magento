@@ -27,17 +27,7 @@ class Test_MyModul_Block_SourceNews_Content extends Mage_Core_Block_Template
         
         return $collection->getData();
     }
-    
-    public function getRowUrl($id) 
-    {        
-        return $this->getUrl('*/*/view', array('id' => $id));
-    }  
-
-    public function getRowUrlPage($numberPage = '')
-    {     
-        return $this->getUrl('*/*/sourceNews', array('id' => $this->_sourceId, 'numberPage' => $numberPage));
-    }
-    
+        
     public function getCountNews() {                           
         return (int)Mage::getModel('test_mymodul/mymodul')
                     ->getCollection()

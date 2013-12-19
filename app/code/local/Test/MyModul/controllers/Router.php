@@ -1,8 +1,4 @@
 <?php
-echo "<pre>";
-echo var_dump('!!!!!!!!!!!!!!!!!!!!!!!!');
-echo "</pre>";
-
 class Test_MyModul_Controllers_Router extends Mage_Core_Controller_Varien_Router_Abstract
 {
     public static $VALID_ACTIONS = array('view', 'all', 'source', 'sourcenews');    
@@ -22,13 +18,12 @@ class Test_MyModul_Controllers_Router extends Mage_Core_Controller_Varien_Router
         if ($firstSlashPos = strpos($data[1], '/')) {
             $action = (isset($data[1])) ? substr($data[1], 0, $firstSlashPos) : null;                
         } else {
-            $action = (isset($data[1]))?$data[1]:null;
+            $action = (isset($data[1])) ? $data[1] : null;
         }
         
         $newArr = array();
         
-        if ($strParam = substr($data[1], $firstSlashPos + 1)) {                   
-            //$strParam = substr($data[1], $firstSlashPos + 1);        
+        if ($strParam = substr($data[1], $firstSlashPos + 1)) {                           
             $arrParam = explode('/', $strParam);        
 
             for($i = 0; $i < count($arrParam); $i++) {
@@ -38,9 +33,7 @@ class Test_MyModul_Controllers_Router extends Mage_Core_Controller_Varien_Router
                     $newArr[$arrParam[$i - 1]] = $arrParam[$i];
                 }
             }
-        }
-        
-        //$action = (isset($data[1]))?$data[1]:null;
+        }        
 
         if (!$action || !in_array($action, self::$VALID_ACTIONS))
             return false;
