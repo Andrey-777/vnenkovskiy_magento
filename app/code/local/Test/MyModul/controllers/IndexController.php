@@ -2,7 +2,9 @@
 class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
 {       
     protected function _construct() {
-        $this->_myTheme();              
+        Mage::getDesign()->setArea('frontend')
+                    ->setPackageName('default')
+                    ->setTheme('mytheme');               
     }
     
     public function indexAction()
@@ -55,11 +57,5 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
                 ->getBlock('news.item')
                 ->setItemNews($itemNews);
         $this->renderLayout();                           
-    }    
-    
-    protected function _myTheme() {
-        Mage::getDesign()->setArea('frontend')
-                            ->setPackageName('default')
-                            ->setTheme('mytheme');           
-    }
+    }        
 }
