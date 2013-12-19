@@ -47,7 +47,17 @@
                     <use>core_read</use>
                 </connection>
             </test_mymodul_read>
-        </resources>        
+        </resources>
+        <events>    
+            <controller_front_init_routers>
+                <observers>
+                    <mymodul_index>
+                        <class>Test_MyModul_Controllers_Router</class>
+                        <method>initControllerRouters</method>
+                    </mymodul_index>
+                </observers>
+            </controller_front_init_routers>                                
+        </events>                
     </global>      
     <frontend>
         <routers>
@@ -66,5 +76,12 @@
                 </test_mymodul>
             </updates>
         </layout>
-    </frontend>         
+    </frontend>
+<!--    <default>
+        <web>
+            <default>
+                <front>mymodul_index</front>
+            </default>
+        </web>             
+    <default>-->
 </config>

@@ -1,7 +1,10 @@
 <?php foreach($this->getCollection() as $item):?>    
     <div class="sourceNews">
-        <h4>                  
+<!--        <h4>                  
             <a href="<?php echo $this->getRowUrl($item['chanel_Id'])?>"><?php echo $item['name']?></a>
+        </h4>-->
+        <h4>                  
+            <a href="<?php echo Mage::helper('test_paginator')->getRowUrl('sourcenews', array('id' => $item['chanel_Id']))?>"><?php echo $item['name']?></a>
         </h4>
         <a href="<?php echo $item['link']?>"><?php echo $this->getDomen($item['link']);?></a>
         <p>Количество новостей: <?php echo $item['count_news'];?></p>

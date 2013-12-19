@@ -8,7 +8,9 @@ class Test_MyModul_Block_SourceNews_Content extends Mage_Core_Block_Template
     protected function _construct()
     {             
         $this->_sourceId = Mage::registry('sourceId');        
-        $this->_rowUrl   = $this->getRowUrlPage();     
+        $this->_rowUrl   = Mage::helper('test_paginator')
+                                ->getRowUrl('sourcenews', array('id'         => $this->_sourceId, 
+                                                                'numberPage' => $numberPage));     
         Mage::register('countOnPage', self::COUNT_NEWS_ON_PAGE);
         Mage::register('countElements', $this->getCountNews());        
         Mage::register('rowUrl', $this->_rowUrl);
