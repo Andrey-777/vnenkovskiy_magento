@@ -1,22 +1,20 @@
 <?php
 class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
 {       
-    protected function _construct() {
+    protected function _construct() {    
         Mage::getDesign()->setArea('frontend')
-                    ->setPackageName('default')
-                    ->setTheme('mytheme');               
+            ->setPackageName('default')
+            ->setTheme('mytheme');               
     }
     
     public function indexAction()
     {                 
-        $this->loadLayout()
-             ->renderLayout();         
+        $this->loadLayout()->renderLayout();         
     }
     
     public function sourceAction()
     {
-        $this->loadLayout()
-             ->renderLayout();          
+        $this->loadLayout()->renderLayout();          
     }
 
     public function sourceNewsAction()
@@ -25,16 +23,13 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
         Mage::register('sourceId', $sourceId);
         
         $this->loadLayout();
-        $this
-            ->getLayout()
-                ->getBlock('sourcenews.page');
+        $this->getLayout()->getBlock('sourcenews.page');
         $this->renderLayout();
     }    
         
     public function allAction()
     {                     
-        $this->loadLayout()
-             ->renderLayout(); 
+        $this->loadLayout()->renderLayout(); 
         
     }
     
@@ -51,11 +46,9 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
             return $this->_forward('noRoute');
         }
         
-        $this->loadLayout();
-        $this
-            ->getLayout()
-                ->getBlock('news.item')
-                ->setItemNews($itemNews);
+        $this->loadLayout()->getLayout()
+            ->getBlock('news.item')
+            ->setItemNews($itemNews);
         $this->renderLayout();                           
     }        
 }

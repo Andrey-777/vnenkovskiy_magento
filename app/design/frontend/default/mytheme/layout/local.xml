@@ -13,8 +13,7 @@
     
     <test_mymodul_index_index>        
         <reference name="content">
-            <block type="test_mymodul/" name="" template=""/>            
-            <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>
+            <block type="test_mymodul/menu_content" name="menu.block" as="" template="test/mymodul/menu/view.phtml"/>
         </reference>
     </test_mymodul_index_index>  
     <test_mymodul_index_source>
@@ -36,7 +35,7 @@
             <block type="test_mymodul/all_content" name="all.page" template="test/mymodul/all/view.phtml"/>
             <block type="test_mymodul/pagin" name="pagin.item" template="test/mymodul/paginator/paginator.phtml"/>
         </reference>
-    </test_mymodul_index_all>_ 
+    </test_mymodul_index_all> 
     <test_mymodul_index_view>  
         <reference name="content">
             <block type="test_mymodul/menu_content" name="menu.block" template="test/mymodul/menu/view.phtml"/>

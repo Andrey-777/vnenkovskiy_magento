@@ -11,6 +11,7 @@ class Test_MyModul_Controllers_Routers_Router extends Mage_Core_Controller_Varie
     
     public function match(Zend_Controller_Request_Http $request) 
     {
+        /** @todo A code below should be simple */
         $pathInfo = trim($request->getPathInfo(), '/');
         preg_match('/^mymodul\/(.*)$/', $pathInfo, $data);                                           
 
@@ -28,7 +29,8 @@ class Test_MyModul_Controllers_Routers_Router extends Mage_Core_Controller_Varie
             for($i = 0; $i < count($tempParams); $i++) {                
                 $i % 2 == 0 ? $arrParams[$tempParams[$i]] = '' : $arrParams[$tempParams[$i - 1]] = $tempParams[$i];                                
             }
-        }        
+        }    
+        /** ----------------------------------- */
 
         if (!$action || !in_array($action, self::$VALID_ACTIONS))
             return false;

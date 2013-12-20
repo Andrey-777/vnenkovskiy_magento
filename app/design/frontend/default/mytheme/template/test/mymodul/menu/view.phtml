@@ -1,7 +1,7 @@
 <div class="menu">
     <ul>
         <li class="menu_item">
-            <a href="<?php echo Mage::helper('test_paginator')->getRowUrl('index')?>">Главная</a>
+            <a href="<?php /** @todo Should move to block as method getHelper() */ echo Mage::helper('test_paginator')->getRowUrl('index')?>">Главная</a>
         </li>
         <li class="menu_item">
             <a href="<?php echo Mage::helper('test_paginator')->getRowUrl('all')?>">Все новости</a>

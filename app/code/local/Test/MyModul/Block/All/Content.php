@@ -1,44 +1,44 @@
 <?php
 class Test_MyModul_Block_All_Content extends Mage_Core_Block_Template
 {      
-    protected $_rowUrl = ''; 
-    
     const COUNT_NEWS_ON_PAGE = 15;        
   
     protected function _construct()
-    {                    
-        $this->_rowUrl = Mage::helper('test_paginator')->getRowUrl('all');     
+    {
         Mage::register('countOnPage', self::COUNT_NEWS_ON_PAGE);
         Mage::register('countElements', $this->getCountNews());
-        Mage::register('rowUrl', $this->_rowUrl);
+        Mage::register('rowUrl', Mage::helper('test_paginator')->getRowUrl('all'));
     }                               
     
     public function getCollection()
-    {     
-        $collection = Mage::getModel('test_mymodul/mymodul')->getCollection()
-                                                     ->setOrder('pubDate', 'DESC')
-                                                     ->setPageSize(self::COUNT_NEWS_ON_PAGE)
-                                                     ->setCurPage($this->getRequest()->getParam('numberPage') ? : 1);
-        
+    {   
+        $collection = $this->getModel()
+            ->getCollection()
+                ->setOrder('pubDate', 'DESC')
+                ->setPageSize(self::COUNT_NEWS_ON_PAGE)
+                ->setCurPage($this->getRequest()->getParam('numberPage') ? : 1);
         $collection->getSelect()
-                    ->join( array('c' => $collection->getTable('test_mymodul/chanel')), 
-                            'main_table.chanel_Id = c.Id', array('c.link'));
-        
-        $listNews = $collection->getData();
-        
-        foreach($listNews as $index => $news) {
-            $listNews[$index]['link'] = Mage::helper('test_paginator')->getDomainName($listNews[$index]['link']);
-        }
-
-        return $listNews;
+            ->join( array('c' => $collection->getTable('test_mymodul/chanel')), 
+                    'main_table.chanel_Id = c.Id', array('c.link'));
+        return $collection;
     }        
     
     public function getCountNews() {
-        return (int)Mage::getModel('test_mymodul/mymodul')->getCollection()->count();
+        return (int)$this->getModel()->getCollection()->count();
     }
     
     public function getQuantityPage()
     {      
         return (int)ceil($this->getCountNews() / self::COUNT_NEWS_ON_PAGE); 
-    }   
+    }
+    
+    protected function getModel()
+    {
+        return Mage::getModel('test_mymodul/mymodul');
+    }
+    
+    protected function getServiceHelper()
+    {
+        return Mage::helper('test_paginator');
+    }
 }
