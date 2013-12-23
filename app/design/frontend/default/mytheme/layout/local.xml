@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout>
-    <default>   
-        <remove name="right"/>
-        <remove name="left"/>
-        <remove name="cart_sidebar" />
-        <remove name="checkout.cart" />                
-        <remove name="right.poll"/>
-        <remove name="right.permanent.callout"/>
-        <remove name="left.permanent.callout"/>
-        <remove name="paypal.partner.right.logo"/>                 
-    </default>
-    
+<layout>    
     <test_mymodul_index_index>        
         <reference name="content">
             <block type="test_mymodul/menu_content" name="menu.block" as="" template="test/mymodul/menu/view.phtml"/>
