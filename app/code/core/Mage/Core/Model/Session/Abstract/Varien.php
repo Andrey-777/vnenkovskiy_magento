@@ -88,12 +88,10 @@ class Mage_Core_Model_Session_Abstract_Varien extends Varien_Object
         $cookieParams = array(
             'lifetime' => $cookie->getLifetime(),
             'path'     => $cookie->getPath(),
-            'domain'   => $cookie->getConfigDomain(),
-            'secure'   => $cookie->isSecure(),
-            'httponly' => $cookie->getHttponly()
+//            'domain'   => $cookie->getConfigDomain(),
+//            'secure'   => $cookie->isSecure(),
+//            'httponly' => $cookie->getHttponly()
         );
-          
-         
 
         if (!$cookieParams['httponly']) {
             unset($cookieParams['httponly']);
