@@ -1,14 +1,14 @@
 <?php
 class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
 {       
-    protected function _construct() {    
+    protected function _construct() {
         Mage::getDesign()->setArea('frontend')
             ->setPackageName('default')
             ->setTheme('mytheme');               
     }
     
     public function indexAction()
-    {                 
+    {
         $this->loadLayout()->renderLayout();         
     }
     
@@ -28,7 +28,7 @@ class Test_MyModul_IndexController extends Mage_Core_Controller_Front_Action
     }    
         
     public function allAction()
-    {                     
+    {
         $this->loadLayout()->renderLayout(); 
         
     }

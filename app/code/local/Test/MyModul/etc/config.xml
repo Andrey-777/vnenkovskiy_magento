@@ -27,7 +27,7 @@
                     </chanel>
                 </entities>
             </mymodul_resource>
-        </models>        
+        </models>
         <resources>
             <test_mymodul_setup>
                 <setup>
@@ -48,16 +48,16 @@
                 </connection>
             </test_mymodul_read>
         </resources>
-        <events>    
+        <events>
             <controller_front_init_routers>
                 <observers>
                     <mymodul_index>
-                        <class>Test_MyModul_Controllers_Routers_Router</class>
+                        <class>Test_MyModul_Controller_Routers_Router</class>
                         <method>initControllerRouters</method>
                     </mymodul_index>
                 </observers>
-            </controller_front_init_routers>                                
-        </events>                
+            </controller_front_init_routers>
+        </events>
     </global>      
     <frontend>
         <routers>

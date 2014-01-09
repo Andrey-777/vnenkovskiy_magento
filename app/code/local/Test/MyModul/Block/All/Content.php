@@ -8,18 +8,21 @@ class Test_MyModul_Block_All_Content extends Mage_Core_Block_Template
         Mage::register('countOnPage', self::COUNT_NEWS_ON_PAGE);
         Mage::register('countElements', $this->getCountNews());
         Mage::register('rowUrl', Mage::helper('test_paginator')->getRowUrl('all'));
-    }                               
+
+    }
     
     public function getCollection()
-    {   
+    {
         $collection = $this->getModel()
             ->getCollection()
                 ->setOrder('pubDate', 'DESC')
                 ->setPageSize(self::COUNT_NEWS_ON_PAGE)
                 ->setCurPage($this->getRequest()->getParam('numberPage') ? : 1);
         $collection->getSelect()
-            ->join( array('c' => $collection->getTable('test_mymodul/chanel')), 
-                    'main_table.chanel_Id = c.Id', array('c.link'));
+            ->join( array('c' => $collection->getTable('test_mymodul/chanel')),
+                    'main_table.chanel_Id = c.id', array('c.link'))
+            ->limit(($this->getRequest()->getParam('numberPage') ? : 1) * self::COUNT_NEWS_ON_PAGE, self::COUNT_NEWS_ON_PAGE);
+
         return $collection;
     }        
     
